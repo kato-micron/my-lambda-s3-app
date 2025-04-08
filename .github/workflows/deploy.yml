@@ -35,11 +35,11 @@ jobs:
           role-to-assume: arn:aws:iam::185168971689:role/role-gha-awscdk-test  # 作成したロールのARN
           aws-region: ap-northeast-1  # デプロイするリージョン
 
-      - name: Bootstrap CDK
-        run: npx cdk bootstrap aws://185168971689/ap-northeast-1
+      #- name: Bootstrap CDK  #bootstrapコマンドは真の初回のみに必要
+      #  run: npx cdk bootstrap aws://185168971689/ap-northeast-1
         
       - name: Deploy with CDK
-        run: npx cdk deploy --require-approval never --trust-for-lookup arn:aws:iam::185168971689:role/role-gha-awscdk-test
+        run: npx cdk deploy --require-approval never
         
       - name: Test Lambda function
         run: |
