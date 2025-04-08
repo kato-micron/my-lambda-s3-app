@@ -36,7 +36,7 @@ jobs:
           aws-region: ap-northeast-1  # デプロイするリージョン
 
       - name: Deploy with CDK
-        run: npx cdk deploy --require-approval never
+        run: npx cdk deploy --require-approval never --trust-for-lookup arn:aws:iam::185168971689:role/role-gha-awscdk-test
         
       - name: Test Lambda function
         run: |
