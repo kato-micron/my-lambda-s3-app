@@ -1,9 +1,12 @@
+# TypeScriptコンパイル結果を除外
 *.js
-!jest.config.js
-!src/lambda/*.js  # Lambda関数のJSファイルは除外しない
 *.d.ts
-node_modules
 
-# CDK asset staging directory
-.cdk.staging
-cdk.out
+# 特定のJSファイルは例外として含める
+!jest.config.js
+!src/lambda/**/*.js
+
+# その他の一般的な除外
+node_modules/
+.cdk.staging/
+cdk.out/
