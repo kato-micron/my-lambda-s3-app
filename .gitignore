@@ -1,4 +1,4 @@
-# TypeScriptコンパイル結果を除外
+# TypeScriptコンパイル結果を除外.
 *.js
 *.d.ts
 
